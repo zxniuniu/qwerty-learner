@@ -2,6 +2,7 @@ import type { WordUpdateAction } from '../InputHandler'
 import InputHandler from '../InputHandler'
 import Letter from './Letter'
 import Notation from './Notation'
+import PinyinNotation from './PinyinNotation'
 import { TipAlert } from './TipAlert'
 import style from './index.module.css'
 import { initialWordState } from './type'
@@ -177,50 +178,73 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
       return
     }
 
-    const inputChar = wordState.inputWord[inputLength - 1]
-    const correctChar = wordState.displayWord[inputLength - 1]
-    let isEqual = false
-    if (inputChar != undefined && correctChar != undefined) {
-      isEqual = isIgnoreCase ? inputChar.toLowerCase() === correctChar.toLowerCase() : inputChar === correctChar
+    // 已经校验通过的字符数（正确状态总是位于词首的连续前缀）。
+    // 英文每次只新增 1 个字符；中文经输入法组合后，一次可能新增多个字符（如 "你好"），
+    // 因此需要从上次校验位置开始，逐个校验新增的字符。
+    let prevCorrect = 0
+    while (prevCorrect < wordState.letterStates.length && wordState.letterStates[prevCorrect] === 'correct') {
+      prevCorrect++
     }
 
-    if (isEqual) {
-      // 输入正确时
-      setWordState((state) => {
-        state.letterTimeArray.push(Date.now())
-        state.correctCount += 1
-      })
+    if (inputLength <= prevCorrect) {
+      return
+    }
 
-      if (inputLength >= wordState.displayWord.length) {
-        // 完成输入时
-        setWordState((state) => {
-          state.letterStates[inputLength - 1] = 'correct'
+    let wrongIndex = -1
+    let wrongChar = ''
+    for (let i = prevCorrect; i < inputLength; i++) {
+      const inputChar = wordState.inputWord[i]
+      const correctChar = wordState.displayWord[i]
+      let isEqual = false
+      if (inputChar != undefined && correctChar != undefined) {
+        isEqual = isIgnoreCase ? inputChar.toLowerCase() === correctChar.toLowerCase() : inputChar === correctChar
+      }
+      if (!isEqual) {
+        wrongIndex = i
+        wrongChar = inputChar
+        break
+      }
+    }
+
+    if (wrongIndex === -1) {
+      // 新增字符全部正确
+      const isFinished = inputLength >= wordState.displayWord.length
+      setWordState((state) => {
+        const now = Date.now()
+        for (let i = prevCorrect; i < inputLength; i++) {
+          state.letterStates[i] = 'correct'
+          state.letterTimeArray.push(now)
+          state.correctCount += 1
+        }
+        if (isFinished) {
           state.isFinished = true
           state.endTime = getUtcStringForMixpanel()
-        })
-        playHintSound()
-      } else {
-        setWordState((state) => {
-          state.letterStates[inputLength - 1] = 'correct'
-        })
-        playKeySound()
+        }
+      })
+
+      for (let i = prevCorrect; i < inputLength; i++) {
+        dispatch({ type: TypingStateActionType.REPORT_CORRECT_WORD })
       }
 
-      dispatch({ type: TypingStateActionType.REPORT_CORRECT_WORD })
+      if (isFinished) {
+        playHintSound()
+      } else {
+        playKeySound()
+      }
     } else {
       // 出错时
       playBeepSound()
       setWordState((state) => {
-        state.letterStates[inputLength - 1] = 'wrong'
+        state.letterStates[wrongIndex] = 'wrong'
         state.hasWrong = true
         state.hasMadeInputWrong = true
         state.wrongCount += 1
         state.letterTimeArray = []
 
-        if (state.letterMistake[inputLength - 1]) {
-          state.letterMistake[inputLength - 1].push(inputChar)
+        if (state.letterMistake[wrongIndex]) {
+          state.letterMistake[wrongIndex].push(wrongChar)
         } else {
-          state.letterMistake[inputLength - 1] = [inputChar]
+          state.letterMistake[wrongIndex] = [wrongChar]
         }
 
         const currentState = JSON.parse(JSON.stringify(state))
@@ -288,6 +312,7 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
         className="flex flex-col items-center justify-center pb-1 pt-4"
       >
         {['romaji', 'hapin'].includes(currentLanguage) && word.notation && <Notation notation={word.notation} />}
+        {currentLanguage === 'zh' && word.notation && !wordDictationConfig.isOpen && <PinyinNotation pinyin={word.notation} />}
         <div
           className={`tooltip-info relative w-fit bg-transparent p-0 leading-normal shadow-none dark:bg-transparent ${
             wordDictationConfig.isOpen ? 'tooltip' : ''

@@ -1,0 +1,416 @@
+[
+    {
+        "name": "一心一意",
+        "trans": [
+            "wholeheartedly"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yī xīn yī yì"
+    },
+    {
+        "name": "全力以赴",
+        "trans": [
+            "go all out"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "quán lì yǐ fù"
+    },
+    {
+        "name": "画蛇添足",
+        "trans": [
+            "ruin by adding superfluous things"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "huà shé tiān zú"
+    },
+    {
+        "name": "亡羊补牢",
+        "trans": [
+            "better late than never"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "wáng yáng bǔ láo"
+    },
+    {
+        "name": "守株待兔",
+        "trans": [
+            "trust to chance and windfalls"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shǒu zhū dài tù"
+    },
+    {
+        "name": "井底之蛙",
+        "trans": [
+            "a person with a narrow outlook"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jǐng dǐ zhī wā"
+    },
+    {
+        "name": "对牛弹琴",
+        "trans": [
+            "cast pearls before swine"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "duì niú tán qín"
+    },
+    {
+        "name": "入乡随俗",
+        "trans": [
+            "when in Rome, do as Romans do"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "rù xiāng suí sú"
+    },
+    {
+        "name": "熟能生巧",
+        "trans": [
+            "practice makes perfect"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shú néng shēng qiǎo"
+    },
+    {
+        "name": "温故知新",
+        "trans": [
+            "review the old to learn the new"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "wēn gù zhī xīn"
+    },
+    {
+        "name": "一举两得",
+        "trans": [
+            "kill two birds with one stone"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yī jǔ liǎng dé"
+    },
+    {
+        "name": "名副其实",
+        "trans": [
+            "be worthy of the name"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "míng fù qí shí"
+    },
+    {
+        "name": "自相矛盾",
+        "trans": [
+            "be self-contradictory"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "zì xiāng máo dùn"
+    },
+    {
+        "name": "水到渠成",
+        "trans": [
+            "success comes naturally"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shuǐ dào qú chéng"
+    },
+    {
+        "name": "胸有成竹",
+        "trans": [
+            "have a well-thought-out plan"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xiōng yǒu chéng zhú"
+    },
+    {
+        "name": "锦上添花",
+        "trans": [
+            "make perfection even better"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jǐn shàng tiān huā"
+    },
+    {
+        "name": "雪中送炭",
+        "trans": [
+            "help in time of need"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xuě zhōng sòng tàn"
+    },
+    {
+        "name": "塞翁失马",
+        "trans": [
+            "a blessing in disguise"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "sài wēng shī mǎ"
+    },
+    {
+        "name": "画龙点睛",
+        "trans": [
+            "add the finishing touch"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "huà lóng diǎn jīng"
+    },
+    {
+        "name": "任重道远",
+        "trans": [
+            "heavy load and a long road"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "rèn zhòng dào yuǎn"
+    },
+    {
+        "name": "精益求精",
+        "trans": [
+            "keep improving"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jīng yì qiú jīng"
+    },
+    {
+        "name": "持之以恒",
+        "trans": [
+            "persevere"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "chí zhī yǐ héng"
+    },
+    {
+        "name": "脚踏实地",
+        "trans": [
+            "be down to earth"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jiǎo tà shí dì"
+    },
+    {
+        "name": "实事求是",
+        "trans": [
+            "seek truth from facts"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shí shì qiú shì"
+    },
+    {
+        "name": "日新月异",
+        "trans": [
+            "change with each passing day"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "rì xīn yuè yì"
+    },
+    {
+        "name": "川流不息",
+        "trans": [
+            "flowing past in an endless stream"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "chuān liú bù xī"
+    },
+    {
+        "name": "络绎不绝",
+        "trans": [
+            "in an endless stream"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "luò yì bù jué"
+    },
+    {
+        "name": "博大精深",
+        "trans": [
+            "broad and profound"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "bó dà jīng shēn"
+    },
+    {
+        "name": "源远流长",
+        "trans": [
+            "of long standing"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yuán yuǎn liú cháng"
+    },
+    {
+        "name": "一帆风顺",
+        "trans": [
+            "smooth sailing"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yī fān fēng shùn"
+    },
+    {
+        "name": "万事如意",
+        "trans": [
+            "may all go well"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "wàn shì rú yì"
+    },
+    {
+        "name": "心想事成",
+        "trans": [
+            "may all your wishes come true"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xīn xiǎng shì chéng"
+    },
+    {
+        "name": "学以致用",
+        "trans": [
+            "study for practical use"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xué yǐ zhì yòng"
+    },
+    {
+        "name": "专心致志",
+        "trans": [
+            "concentrate fully"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "zhuān xīn zhì zhì"
+    },
+    {
+        "name": "废寝忘食",
+        "trans": [
+            "forget sleep and food"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "fèi qǐn wàng shí"
+    },
+    {
+        "name": "夜以继日",
+        "trans": [
+            "day and night"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yè yǐ jì rì"
+    },
+    {
+        "name": "争分夺秒",
+        "trans": [
+            "race against time"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "zhēng fēn duó miǎo"
+    },
+    {
+        "name": "一鸣惊人",
+        "trans": [
+            "amaze the world with one feat"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yī míng jīng rén"
+    },
+    {
+        "name": "水滴石穿",
+        "trans": [
+            "constant effort brings success"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shuǐ dī shí chuān"
+    },
+    {
+        "name": "不耻下问",
+        "trans": [
+            "not ashamed to ask"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "bù chǐ xià wèn"
+    },
+    {
+        "name": "举一反三",
+        "trans": [
+            "infer many things from one"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jǔ yī fǎn sān"
+    },
+    {
+        "name": "触类旁通",
+        "trans": [
+            "comprehend by analogy"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "chù lèi páng tōng"
+    },
+    {
+        "name": "循序渐进",
+        "trans": [
+            "advance step by step"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xún xù jiàn jìn"
+    },
+    {
+        "name": "潜移默化",
+        "trans": [
+            "influence imperceptibly"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "qián yí mò huà"
+    },
+    {
+        "name": "言传身教",
+        "trans": [
+            "teach by word and example"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yán chuán shēn jiào"
+    },
+    {
+        "name": "诲人不倦",
+        "trans": [
+            "teach tirelessly"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "huì rén bù juàn"
+    }
+]

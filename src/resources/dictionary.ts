@@ -1,6 +1,32 @@
 import type { Dictionary, DictionaryResource } from '@/typings/index'
 import { calcChapterCount } from '@/utils'
 
+// 中文练习（使用输入法练习汉字录入）
+const chinese: DictionaryResource[] = [
+  {
+    id: 'chinese-common',
+    name: '现代汉语常用词',
+    description: '现代汉语常用词，练习拼音输入法打字',
+    category: '中文',
+    tags: ['中文', '常用词'],
+    url: '/dicts/chinese_common.json',
+    length: 98,
+    language: 'zh',
+    languageCategory: 'zh',
+  },
+  {
+    id: 'chinese-idioms',
+    name: '中文成语',
+    description: '常用成语，练习拼音输入法打字',
+    category: '中文',
+    tags: ['中文', '成语'],
+    url: '/dicts/chinese_idioms.json',
+    length: 46,
+    language: 'zh',
+    languageCategory: 'zh',
+  },
+]
+
 // 中国考试
 const chinaExam: DictionaryResource[] = [
   {
@@ -4160,6 +4186,7 @@ const indonesianDicts: DictionaryResource[] = [
  * Why arrays? Because it keeps the order across browsers.
  */
 export const dictionaryResources: DictionaryResource[] = [
+  ...chinese,
   ...chinaExam,
   ...internationalExam,
   ...childrenEnglish,

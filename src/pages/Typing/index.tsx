@@ -1,4 +1,5 @@
 import Layout from '../../components/Layout'
+import ChineseHintSwitcher from './components/ChineseHintSwitcher'
 import { DictChapterButton } from './components/DictChapterButton'
 import PronunciationSwitcher from './components/PronunciationSwitcher'
 import ResultScreen from './components/ResultScreen'
@@ -134,6 +135,7 @@ const App: React.FC = () => {
         <Header>
           <DictChapterButton />
           <PronunciationSwitcher />
+          <ChineseHintSwitcher />
           <Switcher />
           <StartButton isLoading={isLoading} />
           <Tooltip content="跳过该词">

@@ -4,6 +4,7 @@ import Letter from './Letter'
 import Notation from './Notation'
 import PinyinNotation from './PinyinNotation'
 import { TipAlert } from './TipAlert'
+import WubiNotation from './WubiNotation'
 import style from './index.module.css'
 import { initialWordState } from './type'
 import type { WordState } from './type'
@@ -12,8 +13,10 @@ import type { WordPronunciationIconRef } from '@/components/WordPronunciationIco
 import { WordPronunciationIcon } from '@/components/WordPronunciationIcon'
 import { EXPLICIT_SPACE } from '@/constants'
 import useKeySounds from '@/hooks/useKeySounds'
+import { useWubiCodes } from '@/hooks/useWubiCodes'
 import { TypingContext, TypingStateActionType } from '@/pages/Typing/store'
 import {
+  chineseHintTypeAtom,
   currentChapterAtom,
   currentDictInfoAtom,
   isIgnoreCaseAtom,
@@ -49,6 +52,9 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
   const currentLanguage = useAtomValue(currentDictInfoAtom).language
   const currentLanguageCategory = useAtomValue(currentDictInfoAtom).languageCategory
   const currentChapter = useAtomValue(currentChapterAtom)
+  const chineseHintType = useAtomValue(chineseHintTypeAtom)
+  const isWubiHint = currentLanguage === 'zh' && chineseHintType === 'wubi'
+  const { codes: wubiCodes } = useWubiCodes(word.name, isWubiHint)
 
   const [showTipAlert, setShowTipAlert] = useState(false)
   const wordPronunciationIconRef = useRef<WordPronunciationIconRef>(null)
@@ -312,7 +318,9 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
         className="flex flex-col items-center justify-center pb-1 pt-4"
       >
         {['romaji', 'hapin'].includes(currentLanguage) && word.notation && <Notation notation={word.notation} />}
-        {currentLanguage === 'zh' && word.notation && !wordDictationConfig.isOpen && <PinyinNotation pinyin={word.notation} />}
+        {currentLanguage === 'zh' &&
+          !wordDictationConfig.isOpen &&
+          (isWubiHint ? wubiCodes && <WubiNotation codes={wubiCodes} /> : word.notation && <PinyinNotation pinyin={word.notation} />)}
         <div
           className={`tooltip-info relative w-fit bg-transparent p-0 leading-normal shadow-none dark:bg-transparent ${
             wordDictationConfig.isOpen ? 'tooltip' : ''

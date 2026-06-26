@@ -4,6 +4,7 @@ import { DISMISS_START_CARD_DATE_KEY, defaultFontSizeConfig } from '@/constants'
 import { idDictionaryMap } from '@/resources/dictionary'
 import { correctSoundResources, keySoundResources, wrongSoundResources } from '@/resources/soundResource'
 import type {
+  ChineseHintType,
   Dictionary,
   InfoPanelState,
   LoopWordTimesOption,
@@ -77,6 +78,9 @@ export const isIgnoreCaseAtom = atomWithStorage('isIgnoreCase', true)
 export const isShowAnswerOnHoverAtom = atomWithStorage('isShowAnswerOnHover', true)
 
 export const isTextSelectableAtom = atomWithStorage('isTextSelectable', false)
+
+// 中文练习时的提示类型：拼音 或 五笔编码
+export const chineseHintTypeAtom = atomWithStorage<ChineseHintType>('chineseHintType', 'pinyin')
 
 export const reviewModeInfoAtom = reviewInfoAtom({
   isReviewMode: false,

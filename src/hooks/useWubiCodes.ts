@@ -1,7 +1,11 @@
+import type { WubiVersion } from '@/typings'
 import { useMemo } from 'react'
 import useSWRImmutable from 'swr/immutable'
 
-const WUBI_DICT_URL = '/dicts/wubi_86.json'
+const WUBI_DICT_URL: Record<WubiVersion, string> = {
+  '86': '/dicts/wubi_86.json',
+  '98': '/dicts/wubi_98.json',
+}
 
 type WubiDict = Record<string, string>
 
@@ -12,11 +16,11 @@ async function wubiDictFetcher(url: string): Promise<WubiDict> {
 }
 
 /**
- * 按需懒加载五笔（86 版）码表。仅在 enabled 为 true 时发起请求，
- * 码表为全量汉字→五笔编码映射，约 270KB，只在用户切换到五笔提示时加载一次。
+ * 按需懒加载五笔码表。仅在 enabled 为 true 时发起请求，并按版本（86 / 98）
+ * 加载对应的全量汉字→五笔编码映射，只在用户切换到五笔提示时加载一次（按版本缓存）。
  */
-export function useWubiCodes(word: string, enabled: boolean): { codes: string[] | null; isLoading: boolean } {
-  const { data, isLoading } = useSWRImmutable<WubiDict>(enabled ? WUBI_DICT_URL : null, wubiDictFetcher)
+export function useWubiCodes(word: string, enabled: boolean, version: WubiVersion): { codes: string[] | null; isLoading: boolean } {
+  const { data, isLoading } = useSWRImmutable<WubiDict>(enabled ? WUBI_DICT_URL[version] : null, wubiDictFetcher)
 
   const codes = useMemo(() => {
     if (!enabled || !data) return null

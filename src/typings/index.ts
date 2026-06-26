@@ -35,6 +35,9 @@ export type WordWithIndex = Word & {
 // 中文练习的提示类型：拼音 或 五笔编码
 export type ChineseHintType = 'pinyin' | 'wubi'
 
+// 五笔版本：86 版 或 98 版
+export type WubiVersion = '86' | '98'
+
 export type InfoPanelType = 'donate' | 'vsc' | 'community' | 'redBook'
 
 export type InfoPanelState = {

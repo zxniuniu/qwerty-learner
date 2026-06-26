@@ -12,6 +12,7 @@ import type {
   PronunciationType,
   WordDictationOpenBy,
   WordDictationType,
+  WubiVersion,
 } from '@/typings'
 import type { ReviewRecord } from '@/utils/db/record'
 import { atom } from 'jotai'
@@ -81,6 +82,9 @@ export const isTextSelectableAtom = atomWithStorage('isTextSelectable', false)
 
 // 中文练习时的提示类型：拼音 或 五笔编码
 export const chineseHintTypeAtom = atomWithStorage<ChineseHintType>('chineseHintType', 'pinyin')
+
+// 五笔提示使用的版本：86 版 或 98 版
+export const wubiVersionAtom = atomWithStorage<WubiVersion>('wubiVersion', '86')
 
 export const reviewModeInfoAtom = reviewInfoAtom({
   isReviewMode: false,

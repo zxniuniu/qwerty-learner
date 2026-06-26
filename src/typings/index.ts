@@ -32,6 +32,9 @@ export type WordWithIndex = Word & {
   index: number
 }
 
+// 中文练习的提示类型：拼音 或 五笔编码
+export type ChineseHintType = 'pinyin' | 'wubi'
+
 export type InfoPanelType = 'donate' | 'vsc' | 'community' | 'redBook'
 
 export type InfoPanelState = {

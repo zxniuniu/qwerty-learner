@@ -24,6 +24,7 @@ import {
   isTextSelectableAtom,
   pronunciationIsOpenAtom,
   wordDictationConfigAtom,
+  wubiVersionAtom,
 } from '@/store'
 import type { Word } from '@/typings'
 import { CTRL, getUtcStringForMixpanel } from '@/utils'
@@ -53,8 +54,9 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
   const currentLanguageCategory = useAtomValue(currentDictInfoAtom).languageCategory
   const currentChapter = useAtomValue(currentChapterAtom)
   const chineseHintType = useAtomValue(chineseHintTypeAtom)
+  const wubiVersion = useAtomValue(wubiVersionAtom)
   const isWubiHint = currentLanguage === 'zh' && chineseHintType === 'wubi'
-  const { codes: wubiCodes } = useWubiCodes(word.name, isWubiHint)
+  const { codes: wubiCodes } = useWubiCodes(word.name, isWubiHint, wubiVersion)
 
   const [showTipAlert, setShowTipAlert] = useState(false)
   const wordPronunciationIconRef = useRef<WordPronunciationIconRef>(null)

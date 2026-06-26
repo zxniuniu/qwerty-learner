@@ -1,0 +1,884 @@
+[
+    {
+        "name": "你好",
+        "trans": [
+            "hello"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "nǐ hǎo"
+    },
+    {
+        "name": "谢谢",
+        "trans": [
+            "thanks"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xiè xie"
+    },
+    {
+        "name": "再见",
+        "trans": [
+            "goodbye"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "zài jiàn"
+    },
+    {
+        "name": "朋友",
+        "trans": [
+            "friend"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "péng you"
+    },
+    {
+        "name": "老师",
+        "trans": [
+            "teacher"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "lǎo shī"
+    },
+    {
+        "name": "学生",
+        "trans": [
+            "student"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xué sheng"
+    },
+    {
+        "name": "学校",
+        "trans": [
+            "school"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xué xiào"
+    },
+    {
+        "name": "中国",
+        "trans": [
+            "China"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "zhōng guó"
+    },
+    {
+        "name": "北京",
+        "trans": [
+            "Beijing"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "běi jīng"
+    },
+    {
+        "name": "上海",
+        "trans": [
+            "Shanghai"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shàng hǎi"
+    },
+    {
+        "name": "家庭",
+        "trans": [
+            "family"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jiā tíng"
+    },
+    {
+        "name": "工作",
+        "trans": [
+            "work; job"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "gōng zuò"
+    },
+    {
+        "name": "公司",
+        "trans": [
+            "company"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "gōng sī"
+    },
+    {
+        "name": "电脑",
+        "trans": [
+            "computer"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "diàn nǎo"
+    },
+    {
+        "name": "手机",
+        "trans": [
+            "mobile phone"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shǒu jī"
+    },
+    {
+        "name": "电话",
+        "trans": [
+            "telephone"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "diàn huà"
+    },
+    {
+        "name": "时间",
+        "trans": [
+            "time"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shí jiān"
+    },
+    {
+        "name": "今天",
+        "trans": [
+            "today"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jīn tiān"
+    },
+    {
+        "name": "明天",
+        "trans": [
+            "tomorrow"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "míng tiān"
+    },
+    {
+        "name": "昨天",
+        "trans": [
+            "yesterday"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "zuó tiān"
+    },
+    {
+        "name": "现在",
+        "trans": [
+            "now"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xiàn zài"
+    },
+    {
+        "name": "星期",
+        "trans": [
+            "week"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xīng qī"
+    },
+    {
+        "name": "中文",
+        "trans": [
+            "Chinese (language)"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "zhōng wén"
+    },
+    {
+        "name": "英文",
+        "trans": [
+            "English (language)"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yīng wén"
+    },
+    {
+        "name": "汉字",
+        "trans": [
+            "Chinese character"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "hàn zì"
+    },
+    {
+        "name": "词语",
+        "trans": [
+            "word; expression"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "cí yǔ"
+    },
+    {
+        "name": "句子",
+        "trans": [
+            "sentence"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jù zi"
+    },
+    {
+        "name": "问题",
+        "trans": [
+            "question; problem"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "wèn tí"
+    },
+    {
+        "name": "答案",
+        "trans": [
+            "answer"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "dá àn"
+    },
+    {
+        "name": "方法",
+        "trans": [
+            "method"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "fāng fǎ"
+    },
+    {
+        "name": "练习",
+        "trans": [
+            "practice; exercise"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "liàn xí"
+    },
+    {
+        "name": "打字",
+        "trans": [
+            "typing"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "dǎ zì"
+    },
+    {
+        "name": "键盘",
+        "trans": [
+            "keyboard"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jiàn pán"
+    },
+    {
+        "name": "鼠标",
+        "trans": [
+            "mouse"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shǔ biāo"
+    },
+    {
+        "name": "学习",
+        "trans": [
+            "to study; to learn"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xué xí"
+    },
+    {
+        "name": "教育",
+        "trans": [
+            "education"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jiào yù"
+    },
+    {
+        "name": "知识",
+        "trans": [
+            "knowledge"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "zhī shi"
+    },
+    {
+        "name": "科学",
+        "trans": [
+            "science"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "kē xué"
+    },
+    {
+        "name": "技术",
+        "trans": [
+            "technology"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jì shù"
+    },
+    {
+        "name": "经济",
+        "trans": [
+            "economy"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jīng jì"
+    },
+    {
+        "name": "文化",
+        "trans": [
+            "culture"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "wén huà"
+    },
+    {
+        "name": "历史",
+        "trans": [
+            "history"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "lì shǐ"
+    },
+    {
+        "name": "社会",
+        "trans": [
+            "society"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shè huì"
+    },
+    {
+        "name": "世界",
+        "trans": [
+            "world"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shì jiè"
+    },
+    {
+        "name": "国家",
+        "trans": [
+            "country"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "guó jiā"
+    },
+    {
+        "name": "城市",
+        "trans": [
+            "city"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "chéng shì"
+    },
+    {
+        "name": "农村",
+        "trans": [
+            "countryside"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "nóng cūn"
+    },
+    {
+        "name": "环境",
+        "trans": [
+            "environment"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "huán jìng"
+    },
+    {
+        "name": "天气",
+        "trans": [
+            "weather"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "tiān qì"
+    },
+    {
+        "name": "温度",
+        "trans": [
+            "temperature"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "wēn dù"
+    },
+    {
+        "name": "食物",
+        "trans": [
+            "food"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shí wù"
+    },
+    {
+        "name": "水果",
+        "trans": [
+            "fruit"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shuǐ guǒ"
+    },
+    {
+        "name": "蔬菜",
+        "trans": [
+            "vegetable"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shū cài"
+    },
+    {
+        "name": "米饭",
+        "trans": [
+            "cooked rice"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "mǐ fàn"
+    },
+    {
+        "name": "面条",
+        "trans": [
+            "noodles"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "miàn tiáo"
+    },
+    {
+        "name": "咖啡",
+        "trans": [
+            "coffee"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "kā fēi"
+    },
+    {
+        "name": "牛奶",
+        "trans": [
+            "milk"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "niú nǎi"
+    },
+    {
+        "name": "医院",
+        "trans": [
+            "hospital"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yī yuàn"
+    },
+    {
+        "name": "医生",
+        "trans": [
+            "doctor"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yī shēng"
+    },
+    {
+        "name": "健康",
+        "trans": [
+            "health"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jiàn kāng"
+    },
+    {
+        "name": "身体",
+        "trans": [
+            "body"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shēn tǐ"
+    },
+    {
+        "name": "运动",
+        "trans": [
+            "exercise; sports"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yùn dòng"
+    },
+    {
+        "name": "音乐",
+        "trans": [
+            "music"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yīn yuè"
+    },
+    {
+        "name": "电影",
+        "trans": [
+            "movie"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "diàn yǐng"
+    },
+    {
+        "name": "旅行",
+        "trans": [
+            "travel"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "lǚ xíng"
+    },
+    {
+        "name": "飞机",
+        "trans": [
+            "airplane"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "fēi jī"
+    },
+    {
+        "name": "火车",
+        "trans": [
+            "train"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "huǒ chē"
+    },
+    {
+        "name": "汽车",
+        "trans": [
+            "car"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "qì chē"
+    },
+    {
+        "name": "自行车",
+        "trans": [
+            "bicycle"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "zì xíng chē"
+    },
+    {
+        "name": "机场",
+        "trans": [
+            "airport"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jī chǎng"
+    },
+    {
+        "name": "车站",
+        "trans": [
+            "station"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "chē zhàn"
+    },
+    {
+        "name": "银行",
+        "trans": [
+            "bank"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yín háng"
+    },
+    {
+        "name": "商店",
+        "trans": [
+            "shop; store"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "shāng diàn"
+    },
+    {
+        "name": "超市",
+        "trans": [
+            "supermarket"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "chāo shì"
+    },
+    {
+        "name": "餐厅",
+        "trans": [
+            "restaurant"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "cān tīng"
+    },
+    {
+        "name": "公园",
+        "trans": [
+            "park"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "gōng yuán"
+    },
+    {
+        "name": "图书馆",
+        "trans": [
+            "library"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "tú shū guǎn"
+    },
+    {
+        "name": "办公室",
+        "trans": [
+            "office"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "bàn gōng shì"
+    },
+    {
+        "name": "会议",
+        "trans": [
+            "meeting"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "huì yì"
+    },
+    {
+        "name": "计划",
+        "trans": [
+            "plan"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jì huà"
+    },
+    {
+        "name": "项目",
+        "trans": [
+            "project; item"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xiàng mù"
+    },
+    {
+        "name": "任务",
+        "trans": [
+            "task; mission"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "rèn wù"
+    },
+    {
+        "name": "目标",
+        "trans": [
+            "goal; target"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "mù biāo"
+    },
+    {
+        "name": "成功",
+        "trans": [
+            "success"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "chéng gōng"
+    },
+    {
+        "name": "努力",
+        "trans": [
+            "effort; to work hard"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "nǔ lì"
+    },
+    {
+        "name": "习惯",
+        "trans": [
+            "habit"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xí guàn"
+    },
+    {
+        "name": "能力",
+        "trans": [
+            "ability"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "néng lì"
+    },
+    {
+        "name": "经验",
+        "trans": [
+            "experience"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jīng yàn"
+    },
+    {
+        "name": "机会",
+        "trans": [
+            "opportunity"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "jī huì"
+    },
+    {
+        "name": "未来",
+        "trans": [
+            "future"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "wèi lái"
+    },
+    {
+        "name": "希望",
+        "trans": [
+            "hope"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xī wàng"
+    },
+    {
+        "name": "梦想",
+        "trans": [
+            "dream"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "mèng xiǎng"
+    },
+    {
+        "name": "快乐",
+        "trans": [
+            "happy"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "kuài lè"
+    },
+    {
+        "name": "幸福",
+        "trans": [
+            "happiness"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "xìng fú"
+    },
+    {
+        "name": "美丽",
+        "trans": [
+            "beautiful"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "měi lì"
+    },
+    {
+        "name": "聪明",
+        "trans": [
+            "clever; smart"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "cōng míng"
+    },
+    {
+        "name": "勇敢",
+        "trans": [
+            "brave"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "yǒng gǎn"
+    },
+    {
+        "name": "诚实",
+        "trans": [
+            "honest"
+        ],
+        "usphone": "",
+        "ukphone": "",
+        "notation": "chéng shí"
+    }
+]

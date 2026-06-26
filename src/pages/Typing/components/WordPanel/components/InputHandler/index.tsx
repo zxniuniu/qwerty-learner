@@ -1,3 +1,4 @@
+import ChineseInputHandler from '../ChineseInputHandler'
 import KeyEventHandler from '../KeyEventHandler'
 import TextAreaHandler from '../TextAreaHandler'
 import { currentDictInfoAtom } from '@/store'
@@ -16,6 +17,8 @@ export default function InputHandler({ updateInput }: { updateInput: (updateObj:
         return <KeyEventHandler updateInput={updateInput} />
       case 'romaji':
         return <KeyEventHandler updateInput={updateInput} />
+      case 'zh':
+        return <ChineseInputHandler updateInput={updateInput} />
       case 'code':
         return <TextAreaHandler updateInput={updateInput} />
       default:

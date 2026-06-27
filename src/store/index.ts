@@ -10,6 +10,7 @@ import type {
   LoopWordTimesOption,
   PhoneticType,
   PronunciationType,
+  TypingLayoutMode,
   WordDictationOpenBy,
   WordDictationType,
   WubiVersion,
@@ -85,6 +86,13 @@ export const chineseHintTypeAtom = atomWithStorage<ChineseHintType>('chineseHint
 
 // 五笔提示使用的版本：86 版 或 98 版
 export const wubiVersionAtom = atomWithStorage<WubiVersion>('wubiVersion', '86')
+
+// 打字页面布局模式（原版 / 增强 / 文章），持久化，便于在使用中随时切换
+export const typingLayoutModeAtom = atomWithStorage<TypingLayoutMode>('typingLayoutMode', 'classic')
+
+// 当前期望按下的物理按键（用于增强模式下虚拟键盘高亮下一键）。
+// 仅对逐字母匹配的拉丁语言有意义；中文经输入法组合，无法预测击键，置空。
+export const nextExpectedKeyAtom = atom<string>('')
 
 export const reviewModeInfoAtom = reviewInfoAtom({
   isReviewMode: false,

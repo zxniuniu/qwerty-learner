@@ -38,6 +38,12 @@ export type ChineseHintType = 'pinyin' | 'wubi'
 // 五笔版本：86 版 或 98 版
 export type WubiVersion = '86' | '98'
 
+// 打字页面的布局模式：
+// classic  - 原版单词卡片
+// enhanced - 增强卡片（叠加虚拟键盘 + 醒目统计）
+// article  - daziba 风格整段文章连续打字
+export type TypingLayoutMode = 'classic' | 'enhanced' | 'article'
+
 export type InfoPanelType = 'donate' | 'vsc' | 'community' | 'redBook'
 
 export type InfoPanelState = {

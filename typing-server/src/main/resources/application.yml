@@ -1,0 +1,37 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: typing-server
+  # 默认使用内存 H2，零配置即可启动；启动时自动执行 schema.sql / data.sql
+  datasource:
+    url: jdbc:h2:mem:typing;DB_CLOSE_DELAY=-1;MODE=MySQL;DATABASE_TO_LOWER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+  h2:
+    console:
+      enabled: true # 访问 http://localhost:8090/h2-console 可查看内存库
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+---
+# MySQL 生产配置：以 -Dspring.profiles.active=mysql 启动，并准备好库与表
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/typing?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  sql:
+    init:
+      mode: never # 生产建议手动执行 schema-mysql.sql，避免每次启动重建

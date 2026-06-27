@@ -1,0 +1,23 @@
+# 本地/独立运行配置。实际微服务部署时，数据源、Redis 等通常由 Nacos 下发。
+# 这里给出 JeeSite 常用配置占位，便于单独启动调试。
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://${DB_HOST:127.0.0.1}:${DB_PORT:3306}/${DB_NAME:jeesite}?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: ${DB_USER:root}
+      password: ${DB_PWD:root}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+# JeeSite 框架配置
+jeesite:
+  # MyBatis 扫描本模块的 mapper xml
+  mybatis:
+    mapperLocations: classpath*:/mappings/**/*.xml
+  # 允许匿名访问的开放接口（玩家端 React 调用），按你的安全策略调整
+  # 下列路径需在 Shiro/安全过滤链中放行，详见 README
+  security:
+    permitUrl: /api/typing/**
+
+# 管理端路径前缀（JeeSite 默认 /a），保持与主框架一致
+adminPath: /a

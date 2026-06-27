@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+      说明：本模块为「打字练习」微服务，按 JeeSite 5.8.1 微服务版规范编写。
+      接入你的真实工程时，请把 parent 改为你 JeeSite Cloud 聚合工程的父 POM，
+      （通常是 com.jeesite:jeesite-cloud 或你自定义的聚合父工程），并按需调整版本。
+    -->
+    <parent>
+        <groupId>com.jeesite</groupId>
+        <artifactId>jeesite-cloud</artifactId>
+        <version>5.8.1</version>
+        <relativePath/>
+    </parent>
+
+    <artifactId>jeesite-typing-service</artifactId>
+    <packaging>jar</packaging>
+    <name>jeesite-typing-service</name>
+    <description>打字练习微服务：文章管理、速度记录、速度排名、打字比赛</description>
+
+    <dependencies>
+        <!-- JeeSite 核心 Web 模块（包含 DataEntity / CrudService / CrudDao / BaseController 等基类） -->
+        <dependency>
+            <groupId>com.jeesite</groupId>
+            <artifactId>jeesite-web</artifactId>
+            <version>5.8.1</version>
+        </dependency>
+
+        <!-- 微服务：服务注册发现 + 配置中心（Nacos）。若你用其它注册中心请自行替换 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <!-- 如需被其它服务通过 Feign 调用，可放开以下依赖
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

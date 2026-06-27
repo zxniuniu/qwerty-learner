@@ -1,4 +1,5 @@
 import Layout from '../../components/Layout'
+import ArticleTyping from './components/ArticleTyping'
 import ChineseHintSwitcher from './components/ChineseHintSwitcher'
 import { DictChapterButton } from './components/DictChapterButton'
 import PronunciationSwitcher from './components/PronunciationSwitcher'
@@ -6,6 +7,7 @@ import ResultScreen from './components/ResultScreen'
 import Speed from './components/Speed'
 import StartButton from './components/StartButton'
 import Switcher from './components/Switcher'
+import VirtualKeyboard from './components/VirtualKeyboard'
 import WordList from './components/WordList'
 import WordPanel from './components/WordPanel'
 import { useConfetti } from './hooks/useConfetti'
@@ -16,7 +18,15 @@ import { DonateCard } from '@/components/DonateCard'
 import Header from '@/components/Header'
 import Tooltip from '@/components/Tooltip'
 import { idDictionaryMap } from '@/resources/dictionary'
-import { currentChapterAtom, currentDictIdAtom, currentDictInfoAtom, isReviewModeAtom, randomConfigAtom, reviewModeInfoAtom } from '@/store'
+import {
+  currentChapterAtom,
+  currentDictIdAtom,
+  currentDictInfoAtom,
+  isReviewModeAtom,
+  randomConfigAtom,
+  reviewModeInfoAtom,
+  typingLayoutModeAtom,
+} from '@/store'
 import { IsDesktop, isLegal } from '@/utils'
 import { useSaveChapterRecord } from '@/utils/db'
 import { useMixPanelChapterLogUploader } from '@/utils/mixpanel'
@@ -39,6 +49,7 @@ const App: React.FC = () => {
 
   const reviewModeInfo = useAtomValue(reviewModeInfoAtom)
   const isReviewMode = useAtomValue(isReviewModeAtom)
+  const layoutMode = useAtomValue(typingLayoutModeAtom)
 
   useEffect(() => {
     // 检测用户设备
@@ -169,24 +180,35 @@ const App: React.FC = () => {
           </Tooltip>
         </Header>
         <div className="container mx-auto flex h-full flex-1 flex-col items-center justify-center pb-5">
-          <div className="container relative mx-auto flex h-full flex-col items-center">
-            <div className="container flex flex-grow items-center justify-center">
-              {isLoading ? (
-                <div className="flex flex-col items-center justify-center ">
-                  <div
-                    className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid  border-indigo-400 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                    role="status"
-                  ></div>
-                </div>
-              ) : (
-                !state.isFinished && <WordPanel />
-              )}
+          {layoutMode === 'article' ? (
+            <div className="flex h-full w-full items-start justify-center overflow-y-auto pt-4">
+              <ArticleTyping />
             </div>
-            <Speed />
-          </div>
+          ) : (
+            <div className="container relative mx-auto flex h-full flex-col items-center">
+              <div className="container flex flex-grow items-center justify-center">
+                {isLoading ? (
+                  <div className="flex flex-col items-center justify-center ">
+                    <div
+                      className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid  border-indigo-400 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                      role="status"
+                    ></div>
+                  </div>
+                ) : (
+                  !state.isFinished && <WordPanel />
+                )}
+              </div>
+              {layoutMode === 'enhanced' && !isLoading && !state.isFinished && (
+                <div className="mb-4 w-full">
+                  <VirtualKeyboard />
+                </div>
+              )}
+              <Speed prominent={layoutMode === 'enhanced'} />
+            </div>
+          )}
         </div>
       </Layout>
-      <WordList />
+      {layoutMode !== 'article' && <WordList />}
     </TypingContext.Provider>
   )
 }

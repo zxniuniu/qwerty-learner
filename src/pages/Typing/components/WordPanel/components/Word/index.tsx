@@ -22,6 +22,7 @@ import {
   isIgnoreCaseAtom,
   isShowAnswerOnHoverAtom,
   isTextSelectableAtom,
+  nextExpectedKeyAtom,
   pronunciationIsOpenAtom,
   wordDictationConfigAtom,
   wubiVersionAtom,
@@ -29,7 +30,7 @@ import {
 import type { Word } from '@/typings'
 import { CTRL, getUtcStringForMixpanel } from '@/utils'
 import { useSaveWordRecord } from '@/utils/db'
-import { useAtomValue } from 'jotai'
+import { useAtomValue, useSetAtom } from 'jotai'
 import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
 import { useImmer } from 'use-immer'
@@ -57,6 +58,7 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
   const wubiVersion = useAtomValue(wubiVersionAtom)
   const isWubiHint = currentLanguage === 'zh' && chineseHintType === 'wubi'
   const { codes: wubiCodes } = useWubiCodes(word.name, isWubiHint, wubiVersion)
+  const setNextExpectedKey = useSetAtom(nextExpectedKeyAtom)
 
   const [showTipAlert, setShowTipAlert] = useState(false)
   const wordPronunciationIconRef = useRef<WordPronunciationIconRef>(null)
@@ -79,6 +81,20 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
     newWordState.randomLetterVisible = headword.split('').map(() => Math.random() > 0.4)
     setWordState(newWordState)
   }, [word, setWordState])
+
+  // 维护「下一个待按键」供增强模式下的虚拟键盘高亮使用。
+  // 仅逐字母匹配的拉丁语言可预测击键；中文经输入法组合，无法预测，置空。
+  useEffect(() => {
+    if (currentLanguage === 'zh') {
+      setNextExpectedKey('')
+      return
+    }
+    const nextChar = wordState.displayWord[wordState.inputWord.length] ?? ''
+    setNextExpectedKey(nextChar === EXPLICIT_SPACE ? ' ' : nextChar)
+  }, [wordState.inputWord, wordState.displayWord, currentLanguage, setNextExpectedKey])
+
+  // 卸载时清空，避免离开练习后键盘仍残留高亮
+  useEffect(() => () => setNextExpectedKey(''), [setNextExpectedKey])
 
   const updateInput = useCallback(
     (updateAction: WordUpdateAction) => {

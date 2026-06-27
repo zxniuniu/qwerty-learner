@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+  说明：标准 CRUD 由 JeeSite 基于 @Table 注解自动生成，这里仅编写自定义的「速度排名」聚合查询。
+  namespace 必须与 DAO 接口全限定名一致。
+-->
+<mapper namespace="com.jeesite.modules.typing.dao.SpeedRecordDao">
+
+  <!-- 速度排名：按用户聚合取最好成绩，支持按模式与时间区间过滤 -->
+  <select id="findRanking" resultType="com.jeesite.modules.typing.entity.SpeedRecord">
+    SELECT
+      a.user_code   AS "userCode",
+      MAX(a.user_name) AS "userName",
+      MAX(a.cpm)    AS "cpm",
+      MAX(a.wpm)    AS "wpm",
+      ROUND(AVG(a.accuracy)) AS "accuracy",
+      COUNT(1)      AS "recordCount"
+    FROM ts_speed_record a
+    WHERE a.status = '0'
+    <if test="mode != null and mode != ''">
+      AND a.mode = #{mode}
+    </if>
+    <if test="beginDate != null">
+      AND a.create_date &gt;= #{beginDate}
+    </if>
+    <if test="endDate != null">
+      AND a.create_date &lt;= #{endDate}
+    </if>
+    GROUP BY a.user_code
+    ORDER BY MAX(a.cpm) DESC
+  </select>
+
+</mapper>

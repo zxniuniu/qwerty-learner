@@ -66,9 +66,18 @@ jeesite-typing-service/
 
 `/speed/ranking` 按 `user_code` 聚合，取每位用户的**最高 cpm**、平均正确率与记录条数，按最高 cpm 降序。可用 `mode` 过滤不同练习类型的榜单。
 
-## 后续阶段（前端）
+## 前端对接（React 玩家端）
 
-- **Phase 2 React 玩家端对接**（在 qwerty-learner 前端）：完赛上报速度、排行榜可视化页、比赛页、文章模式从后端加载文章。
-- **Phase 3 jeesite-vue 管理后台**：文章管理增删改查页、速度排名 ECharts 可视化、比赛管理与排行榜页。
+通过环境变量开启后端功能（不配置则 App 行为不变，公共部署不受影响）：
+
+```bash
+# .env.local（qwerty-learner 前端）
+VITE_TYPING_API_BASE=http://localhost:8090   # 指向本服务或网关地址
+```
+
+- **已完成（Phase 2）**：`src/api/typingApi.ts` API 客户端；完成一章练习后自动上报速度到 `/speed/save`；
+  新增 **速度排行榜页** `/ranking`（含名次、CPM 可视化条、模式筛选），页脚奖杯图标进入（仅在配置后端时显示）。
+- **后续（Phase 3）jeesite-vue 管理后台**：文章管理增删改查页、速度排名 ECharts 可视化、比赛管理与排行榜页；
+  以及玩家端「比赛」页（依赖文章/连续打字模式，建议在 PR #2 的文章模式合并后接入）。
 
 > 说明：本仓库（qwerty-learner）是 React 工程，Java 模块放在 `jeesite-typing-service/` 仅为交付与版本管理，最终应迁入你的 JeeSite 微服务工作区。

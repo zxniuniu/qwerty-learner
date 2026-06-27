@@ -11,11 +11,12 @@ import WordPanel from './components/WordPanel'
 import { useConfetti } from './hooks/useConfetti'
 import { useWordList } from './hooks/useWordList'
 import { TypingContext, TypingStateActionType, initialState, typingReducer } from './store'
+import { saveSpeedRecord } from '@/api/typingApi'
 import { DonateCard } from '@/components/DonateCard'
 import Header from '@/components/Header'
 import Tooltip from '@/components/Tooltip'
 import { idDictionaryMap } from '@/resources/dictionary'
-import { currentChapterAtom, currentDictIdAtom, isReviewModeAtom, randomConfigAtom, reviewModeInfoAtom } from '@/store'
+import { currentChapterAtom, currentDictIdAtom, currentDictInfoAtom, isReviewModeAtom, randomConfigAtom, reviewModeInfoAtom } from '@/store'
 import { IsDesktop, isLegal } from '@/utils'
 import { useSaveChapterRecord } from '@/utils/db'
 import { useMixPanelChapterLogUploader } from '@/utils/mixpanel'
@@ -32,6 +33,7 @@ const App: React.FC = () => {
   const [currentDictId, setCurrentDictId] = useAtom(currentDictIdAtom)
   const setCurrentChapter = useSetAtom(currentChapterAtom)
   const randomConfig = useAtomValue(randomConfigAtom)
+  const currentDictInfo = useAtomValue(currentDictInfoAtom)
   const chapterLogUploader = useMixPanelChapterLogUploader(state)
   const saveChapterRecord = useSaveChapterRecord()
 
@@ -109,6 +111,23 @@ const App: React.FC = () => {
     if (state.isFinished && !state.isSavingRecord) {
       chapterLogUploader()
       saveChapterRecord(state)
+
+      // 上报本章速度到打字微服务（仅在配置了后端时生效）
+      const duration = state.timerData.time
+      const correct = state.chapterData.correctCount
+      const wrong = state.chapterData.wrongCount
+      const cpm = duration > 0 ? Math.round(correct / (duration / 60)) : 0
+      saveSpeedRecord({
+        mode: 'word',
+        refId: currentDictInfo.id,
+        refName: currentDictInfo.name,
+        cpm,
+        wpm: state.timerData.wpm,
+        accuracy: state.timerData.accuracy,
+        duration,
+        charCount: correct + wrong,
+        wrongCount: wrong,
+      })
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

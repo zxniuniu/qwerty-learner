@@ -1,5 +1,6 @@
 import { DonatingCard } from '../DonatingCard'
 import { StickerButton } from '../DonatingCard/components/StickerButton'
+import { isTypingBackendEnabled } from '@/api/typingApi'
 import redBookCode from '@/assets/redBook-code.jpg'
 import InfoPanel from '@/components/InfoPanel'
 import Tooltip from '@/components/Tooltip'
@@ -21,6 +22,7 @@ import IconWechat2 from '~icons/simple-icons/wechat'
 import IconWechat from '~icons/tabler/brand-wechat'
 import IconCoffee from '~icons/tabler/coffee'
 import IconTerminal2 from '~icons/tabler/terminal-2'
+import IconTrophy from '~icons/tabler/trophy'
 import IconFlagChina from '~icons/twemoji/flag-china'
 
 const Footer: React.FC = () => {
@@ -215,6 +217,19 @@ const Footer: React.FC = () => {
         <a rel="noreferrer" className="cursor-pointer focus:outline-none" onClick={() => navigate('/friend-links')} aria-label="查看友链">
           <RiLinksLine fontSize={14} className="text-gray-500 hover:text-indigo-400 dark:text-gray-400 dark:hover:text-indigo-400" />
         </a>
+
+        {isTypingBackendEnabled && (
+          <Tooltip content="速度排行榜">
+            <a
+              rel="noreferrer"
+              className="cursor-pointer focus:outline-none"
+              onClick={() => navigate('/ranking')}
+              aria-label="查看速度排行榜"
+            >
+              <IconTrophy fontSize={15} className="text-gray-500 hover:text-amber-500 dark:text-gray-400 dark:hover:text-amber-500" />
+            </a>
+          </Tooltip>
+        )}
 
         <Tooltip content="中国大陆镜像">
           <a href="https://kaiyiwing.gitee.io/qwerty-learner" target="_self" title="前往中国大陆镜像">
